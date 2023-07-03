@@ -55,12 +55,12 @@ public class CustomerServices {
         Customer existingCustomer = customerRepo.findById(id).orElse(null);
         if (existingCustomer != null) {
             existingCustomer.setEmail(customer.getEmail());
+            existingCustomer.setName(customer.getName());
+            existingCustomer.setPhone(customer.getPhone());
             customerRepo.save(existingCustomer);
         }
     }
-
-    public  void delete(Integer id){
-    customerRepo.deleteById(id);}
+    public void delete(Integer id){customerRepo.deleteById(id);}
 }
 
 
